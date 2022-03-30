@@ -7,6 +7,7 @@ import UserNotFound from "./Components/UserNotFound/UserNotFound";
 import Posts from "./Components/Posts/Posts";
 import Users from "./Components/Users/Users";
 import UserDetails from "./Components/UserDetails/UserDetails";
+import PostDetails from "./Components/PostDetails/PostDetails";
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/users" element={<Users></Users>}></Route>
         <Route path="/user/:id" element={<UserDetails></UserDetails>}></Route>
-        {/* <Route path="/posts/:id" element={<Posts></Posts>}></Route> */}
+        <Route path="/posts" element={<Posts></Posts>}>
+          <Route path=":id" element={<PostDetails></PostDetails>}></Route>
+        </Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="*" element={<UserNotFound></UserNotFound>}></Route>
       </Routes>
